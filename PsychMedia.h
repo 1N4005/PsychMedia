@@ -24,19 +24,23 @@ class Window {
         int a;
 
         Window(const char* title, Color color, int width, int height);
+        void Rectangle(int start_x, int start_y, int end_x, int end_y, Color color);
+        void Loop();
+        bool GetRunning();
+        void Stop();
+        void Draw();
     private:
-
+        void _draw_bg();
         void _input();
         void _update();
-        void _draw();
 
         const char* _title;
 
         int _width;
         int _height;
-        
+
         bool _running;
-        
+
         SDL_Renderer* _renderer;
         SDL_Window* _window;
 };
